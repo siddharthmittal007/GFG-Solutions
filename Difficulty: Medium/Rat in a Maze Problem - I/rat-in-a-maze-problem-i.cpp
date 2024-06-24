@@ -23,7 +23,7 @@ class Solution{
         // Exploring each direction from current position
         for(int i=0;i<dr.size();i++)
         {
-            // Coordiantes of next position
+            // Coordinates of next position
             int next_r=(i/2?r:r-1+2*(i%2));
             int next_c=(i/2?c-1+2*(i%2):c);
             
