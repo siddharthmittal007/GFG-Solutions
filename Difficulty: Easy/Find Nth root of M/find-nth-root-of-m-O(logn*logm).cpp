@@ -38,15 +38,15 @@ class Solution{
 	       
 	       int val=pow(mid,n);
 	       
-	       if(val==-1 || m<val)
+	       if(val==-1 || val>m)
 	       {
 	           high=mid-1;
 	       }
-	       else if(m>val)
+	       else if(val<m)
 	       {
 	           low=mid+1;
 	       }
-	       else //(m==val)
+	       else //(val==m)
 	       {
 	           return(mid); // 'nth' root of 'm'
 	       }
