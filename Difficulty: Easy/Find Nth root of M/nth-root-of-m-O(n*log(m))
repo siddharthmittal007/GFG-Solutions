@@ -12,7 +12,7 @@ class Solution{
 	   
 	   while(low<=high)
 	   {
-	        int mid=(low+high)/2;
+	        int mid=low+(high-low)/2;
 	       
 	        long long int x=1LL;
 	        for(int i=1;i<=n;i++)
