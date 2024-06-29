@@ -34,7 +34,7 @@ class Solution{
 	   
 	   while(low<=high)
 	   {
-	       int mid=(low+high)/2;
+	       int mid=low+(high-low)/2;
 	       
 	       int val=pow(mid,n);
 	       
