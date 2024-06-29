@@ -22,7 +22,7 @@ public:
         // Binary search for median
         while(low<high)
         {
-            int mid=(low+high)/2;
+            int mid=low+(high-low)/2;
             
             // Count of numbers equal to or lesser than 'mid'
             int count=0;
