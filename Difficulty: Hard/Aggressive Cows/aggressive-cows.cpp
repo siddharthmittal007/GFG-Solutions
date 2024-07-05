@@ -11,26 +11,25 @@ class Solution {
 public:
     bool isValid(vector<int>& stalls,int k,int min_dist)
     {
-        int count=1,last=stalls[0];
+        // Placing maximum number of cows possible in stalls
+        // with minimum distance 'min_dist' b/w two cows
+        int count=1,last_stall=stalls[0];
         for(int i=1;i<stalls.size();i++)
         {
-            if(stalls[i]-last>=min_dist)
+            if(stalls[i]-last_stall>=min_dist)
             {
                 count++;
-                last=stalls[i];
-            }
-            else
-            {
-                continue;
+                last_stall=stalls[i];
             }
         }
+        
         if(count>=k)
         {
-            return(true);
+            return(true);   // Valid placement possible for 'k' cows
         }
         else
         {
-            return(false);
+            return(false);  //  Valid placement not possible
         }
     }
     
@@ -40,7 +39,7 @@ public:
         
         // Binary search
         int ans=0;
-        int low=0,high=INT_MAX;
+        int low=0,high=stalls[n-1]-stalls[0];
         while(low<=high)
         {
             int mid=low+(high-low)/2;
@@ -58,7 +57,6 @@ public:
         return(ans);
     }
 };
-
 //{ Driver Code Starts.
 
 int main() {
