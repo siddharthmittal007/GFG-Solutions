@@ -26,35 +26,42 @@ class Solution
             return x.second > y.second;
         }
     };
+    
     //Function to merge k sorted arrays.
     vector<int> mergeKArrays(vector<vector<int>> arr, int K)
     {
         // Min Heap
         typedef pair<pair<int,int>,int> pq_elem;
-        priority_queue  <pq_elem,vector<pq_elem>,comp> pq;
+        priority_queue<pq_elem,vector<pq_elem>,comp> pq;
         
-        for(int i=0;i<K;i++)
+        // Pushing 0th index elements of each vector to 'pq'
+        for(int i=0;i<arr.size();i++)
         {
             pq.push({{i,0},arr[i][0]});
         }
         
-        vector<int> ans;
+        vector<int> ans;        // Vector to hold merged sorted vector
+        
+        
+        // Obtaining elements in sorted order
         while(!pq.empty())
         {
+            // Popping least value element
             pq_elem elem=pq.top();
             pq.pop();
+            
+            // Pushing to answer sorted vector
             ans.push_back(elem.second);
             
+            // Adding to 'pq' successsor of element
             int i=elem.first.first,j=elem.first.second+1;
             if(j<arr[i].size())
             {
                 pq.push({{i,j},arr[i][j]});
             }
-            
-            
         }
         
-        return(ans);
+        return(ans);    // Return merged sorted vector
     }
 };
 
@@ -81,10 +88,4 @@ int main()
     }
 	return 0;
 }
-
-
-
-
-
-
 // } Driver Code Ends
