@@ -93,3 +93,9 @@ int MyQueue :: pop()
         }
         return(temp);
 }
+
+// PUSH
+// T.C=O(1) ;   S.C=O(1)
+
+// POP
+// T.C=O(1) ;   S.C=O(1)
