@@ -44,12 +44,18 @@ void MyStack ::push(int x) {
 int MyStack ::pop() {
     if(top==-1)
     {
-        return(-1);// Stack Empty
+        return(-1); // Stack Empty
     }
     int temp=arr[top];
     top--;
     return(temp);
 }
+
+// PUSH
+// T.C=O(1) ;   S.C=O(1)
+
+// POP
+// T.C=O(1) ;   S.C=O(1)
 
 
 //{ Driver Code Starts.
