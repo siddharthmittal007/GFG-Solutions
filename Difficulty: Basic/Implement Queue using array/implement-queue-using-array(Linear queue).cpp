@@ -80,7 +80,7 @@ void MyQueue :: push(int x)
 //Function to pop an element from queue and return that element.
 int MyQueue :: pop()
 {
-        if(front==rear)
+        if(front==0 && rear==0)
         {
             return(-1);             // Queue empty
         }
